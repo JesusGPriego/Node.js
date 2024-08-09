@@ -1,4 +1,4 @@
-import { emailTemplate } from "../../src/js-foundation/01-template";
+import { emailTemplate } from "@/js-foundation/01-template";
 
 describe("01-template", () => {
   test("should contain a greeting - emailTemplate", () => {
@@ -11,7 +11,7 @@ describe("01-template", () => {
   test("sould contain {{name}} and {{orderId}} - emailTemplate", () => {
     expect(emailTemplate).toMatch(/{{name}}/);
     expect(emailTemplate).toMatch(/{{orderId}}/);
-    expect(emailTemplate).toContain('{{name}}')
-    expect(emailTemplate).toContain('{{orderId}}')
+    expect(emailTemplate).toContain("{{name}}");
+    expect(emailTemplate).toContain("{{orderId}}");
   });
 });

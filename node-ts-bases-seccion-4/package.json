@@ -1,6 +1,8 @@
 {
   "name": "02-bases",
   "version": "1.0.0",
+  "author": "Suleware",
+  "license": "MIT",
   "description": "Node.js first steps",
   "main": "app.js",
   "scripts": {
@@ -11,8 +13,6 @@
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/app.js"
   },
-  "author": "Suleware",
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.5.1",
