@@ -1,0 +1,35 @@
+{
+  "name": "02-bases",
+  "version": "1.0.0",
+  "author": "Suleware",
+  "license": "MIT",
+  "description": "Node.js first steps",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --watchAll",
+    "test:coverage": "jest --coverage",
+    "dev": "nodemon",
+    "build": "npm run test && rimraf ./dist && tsc --project tsconfig.build.json",
+    "start": "node dist/app.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.5.1",
+    "@types/uuid": "^9.0.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.17.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "get-age": "^1.0.1",
+    "rimraf": "^6.0.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
+  }
+}
