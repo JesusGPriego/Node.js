@@ -3,9 +3,9 @@
 This project is a 'first-steps' walkthrough in node.js.
 
 Relevants parts are project configuration, being relevant
-    - tsconfig.json
-    - jest.config.ts
-    - .vscode
+- tsconfig.json
+- jest.config.ts
+- .vscode
 
 ## Scripts
 
