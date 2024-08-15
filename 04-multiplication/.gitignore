@@ -2,5 +2,6 @@ node_modules/
 
 *.log
 
+outputs/
 .DS_Store
 coverage/
