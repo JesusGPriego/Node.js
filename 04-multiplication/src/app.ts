@@ -1,9 +1,4 @@
 import { yarg } from '@/config/plugins/args.plugin';
+import { main } from '@/main';
 
-(async () => {
-    await main();
-})();
-
-async function main() {
-    console.log(yarg);
-}
+main(yarg)

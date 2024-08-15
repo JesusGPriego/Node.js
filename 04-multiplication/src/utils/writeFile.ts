@@ -1,5 +1,5 @@
-import { outputPath } from "@/constants/constants";
 import fs from "fs";
+import { outputPath } from "@/constants/constants";
 
 export const writeFile = (data: string, file: string) => {
   fs.mkdirSync(outputPath, { recursive: true });
