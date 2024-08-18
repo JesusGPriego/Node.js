@@ -1,7 +1,16 @@
-import fs from "fs";
-import { outputPath } from "@/constants/constants";
+import fs from 'fs';
+import { outputPath } from '@/constants/constants';
 
-export const writeFile = (data: string, file: string) => {
-  fs.mkdirSync(outputPath, { recursive: true });
-  fs.writeFileSync(file, data);
+export const saveFile = (
+    destination: string,
+    file: string,
+    data: string
+): boolean => {
+    try {
+        fs.mkdirSync(destination, { recursive: true });
+        fs.writeFileSync(`${destination}/${file}.txt`, data);
+        return true;
+    } catch (error) {
+        return false;
+    }
 };

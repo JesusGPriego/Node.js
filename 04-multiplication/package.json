@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/app.ts -b 10 -l 10 -s",
-    "dev:nodemon": "nodemon",
+    "dev": "tsx src/app.ts -b 10 -l 10 -p -n PRUEBA -d test",
+    "dev:nodemon": "nodemon -b 10 -l 10 -p true",
     "build": "rimraf ./dist && tsc --project tsconfig.build.json",
     "start": "npm run build && node dist/app.js"
   },

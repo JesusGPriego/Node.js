@@ -15,11 +15,23 @@ export const yarg = yargs(process.argv)
         default: 10,
         describe: 'Multiplication table limit',
     })
-    .option('s', {
-        alias: 'show',
+    .option('p', {
+        alias: 'print',
         type: 'boolean',
         default: false,
-        description: 'Show multiplication table',
+        description: 'Print multiplication table',
+    })
+    .option('d', {
+        alias: 'destination',
+        type: 'string',
+        default: 'outputs',
+        description: 'File destination',
+    })
+    .option('n', {
+        alias: 'name',
+        type: 'string',
+        default: 'table',
+        description: 'File name',
     })
     .check((argv, options) => {
         if (argv.b < 1) {
