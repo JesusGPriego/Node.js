@@ -1,3 +1,4 @@
+import { HeaderCreator } from '@/domain/use-case/createHeader.useCase';
 import { TableCreator } from '@/domain/use-case/createTable.useCase';
 import { FileSaver } from '@/domain/use-case/saveFile.useCase';
 
@@ -16,9 +17,13 @@ export class ServerApp {
         console.log('options received: \n', options);
         const tableCreator = new TableCreator();
         const table = tableCreator.execute({ base, limit });
+        const header = new HeaderCreator().execute({
+            title: `Table - ${base}`,
+        });
+        const data = `${header}${table}`;
         if (printTable) console.log(table);
         const isSaved = new FileSaver().execute({
-            data: table,
+            data,
             fileName: `${name}-${base}`,
             destination,
         });
