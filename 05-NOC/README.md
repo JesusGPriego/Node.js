@@ -1,6 +1,6 @@
 ## Description
 
-base node.js configured with ts-node
+NOC project - Network Operation center
 
 ### Scripts
 
