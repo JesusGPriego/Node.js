@@ -2,6 +2,14 @@
 
 NOC project - Network Operation center
 
+## Topics 
+
+- Clean arch introduction
+- DI
+- JSON-server
+- Use cases
+- CRON tasks 
+
 ### Scripts
 
 
