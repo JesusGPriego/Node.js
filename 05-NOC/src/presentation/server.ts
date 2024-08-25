@@ -1,6 +1,8 @@
 import { CheckService } from "@/domain/use-cases/checks/check-service";
 import { CronService } from "@/presentation/cron/cron-service";
 
+const defaultURL = "https://google.com";
+
 function createCronTimeSeconds(seconds: number): string {
   return `*/${seconds} * * * * *`;
 }
@@ -11,8 +13,11 @@ function onTick(callback: Function): () => void {
   };
 }
 
-function checkService(url: string = "http://localhost:3000/posts") {
-  new CheckService().execute(url);
+function checkService(url: string = defaultURL) {
+  new CheckService(
+    () => console.log("success"),
+    (error: string) => console.log(error)
+  ).execute(url);
 }
 
 export class Server {
