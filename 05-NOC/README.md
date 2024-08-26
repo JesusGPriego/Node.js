@@ -10,11 +10,18 @@ NOC project - Network Operation center
 - Use cases
 - CRON tasks 
 
+
+
+### How to init
+
+1. Clone .env.template into .env
+2. Configure those vars with a value
+
+
 ### Scripts
 
-
 ```
-  "dev": "tsnd --respawn --clear src/app.ts",
-  "build": "rimraf ./dist && tsc",
-  "start": "npm run build && node dist/app.js"
+  npm run dev,
+  npm run start,
+  npm run build
 ```
