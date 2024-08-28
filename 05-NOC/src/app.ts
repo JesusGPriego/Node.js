@@ -2,7 +2,7 @@ import { Server } from "@/presentation/server";
 import { envs } from "@/config/env";
 
 (() => {
-  main2();
+  main();
 })();
 
 function main() {
