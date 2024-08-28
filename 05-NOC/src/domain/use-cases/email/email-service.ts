@@ -1,18 +1,18 @@
+import { EmailPlugin } from '@/config/mailer/mailer.plugin';
 import { Log, LogSeverityLevel } from '@/domain/entities/log.entity';
 import { LogRepository } from '@/domain/repository/log.repository';
-import { EmailService } from '@/presentation/email/email.service';
 
 interface SendLogEmailUseCase {
   execute: (to: string | string[]) => Promise<boolean>;
 }
 
-export class SendEmailLogs implements SendLogEmailUseCase {
+export class EmailService implements SendLogEmailUseCase {
   constructor(
-    private readonly emailService: EmailService,
+    private readonly emailPlugin: EmailPlugin,
     private readonly logRepository: LogRepository
   ) {}
   async execute(to: string | string[]) {
-    const sent = await this.emailService.sendEmailWithFileSystemLogs(to);
+    const sent = await this.emailPlugin.sendEmailWithFileSystemLogs(to);
     if (!sent) {
       this.saveLog(false);
       return false;
