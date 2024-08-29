@@ -15,4 +15,7 @@ export class CronService {
     job.start();
     return job;
   }
+  static createCronTimeSeconds(seconds: number): string {
+    return `*/${seconds} * * * * *`;
+  }
 }
