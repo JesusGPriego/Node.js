@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { envs } from '@/config/env';
+import { EmailServicePlugin } from '@/domain/use-cases/email/email-service';
 
 type SendMailOptions = {
   to: string | string[];
@@ -21,7 +21,7 @@ type EmailSettings = {
   };
 };
 
-export class EmailPlugin {
+export class EmailPlugin implements EmailServicePlugin {
   public settings: EmailSettings;
 
   constructor(settings: EmailSettings) {

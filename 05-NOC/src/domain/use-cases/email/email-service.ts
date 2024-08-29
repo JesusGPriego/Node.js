@@ -1,4 +1,3 @@
-import { EmailPlugin } from '@/config/mailer/mailer.plugin';
 import { Log, LogSeverityLevel } from '@/domain/entities/log.entity';
 import { LogRepository } from '@/domain/repository/log.repository';
 
@@ -6,9 +5,13 @@ interface SendLogEmailUseCase {
   execute: (to: string | string[]) => Promise<boolean>;
 }
 
+export interface EmailServicePlugin {
+  sendEmailWithFileSystemLogs: (to: string | string[]) => Promise<boolean>
+}
+
 export class EmailService implements SendLogEmailUseCase {
   constructor(
-    private readonly emailPlugin: EmailPlugin,
+    private readonly emailPlugin: EmailServicePlugin,
     private readonly logRepository: LogRepository
   ) {}
   async execute(to: string | string[]) {

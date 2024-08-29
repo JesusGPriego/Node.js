@@ -39,6 +39,6 @@ export class Server {
     // new SendEmailLogs(emailService, fileSystemRepository).execute([
     //   envs.RECEIVER_EMAIL,
     // ]);
-    emailService.execute(envs.RECEIVER_EMAIL);
+    // emailService.execute(envs.RECEIVER_EMAIL);
   }
 }
