@@ -18,6 +18,7 @@ NOC project - Network Operation center
 
 ```
   docker compose up -d
+  npm install
 ```
 
 ### Scripts
