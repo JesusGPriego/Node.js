@@ -1,7 +1,7 @@
 export enum LogSeverityLevel {
-  low = "low",
-  medium = "medium",
-  high = "high",
+  low = 'low',
+  medium = 'medium',
+  high = 'high',
 }
 
 export type LogAttrs = {
@@ -21,7 +21,7 @@ export class Log {
     const { createdAt = new Date(), level, message, origin } = options;
     this.message = message;
     this.level = level;
-    this.createdAt = new Date();
+    this.createdAt = createdAt,
     this.origin = origin;
   }
 }
