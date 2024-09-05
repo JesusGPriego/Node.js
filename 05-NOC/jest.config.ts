@@ -191,7 +191,13 @@ const config: Config = {
   // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-  // watchPathIgnorePatterns: [],
+  watchPathIgnorePatterns: [
+    '/node_modules/',
+    'mongo',
+    'postgres',
+    'postgres-test', // aquí van las carpetas de los volumenes creados por docker
+    'mongo-test',
+  ],
 
   // Whether to use watchman for file crawling
   // watchman: true,

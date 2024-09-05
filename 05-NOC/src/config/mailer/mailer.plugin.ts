@@ -28,7 +28,6 @@ export class EmailPlugin implements EmailServicePlugin {
     this.settings = settings;
   }
 
-  // Método que adapta la dependencia de "nodemailer"
   private async sendEmail(options: SendMailOptions): Promise<boolean> {
     const { to, subject, htmlBody, attachments = [] } = options;
     const { auth, service } = this.settings;

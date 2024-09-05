@@ -6,7 +6,7 @@ interface SendLogEmailUseCase {
 }
 
 export interface EmailServicePlugin {
-  sendEmailWithFileSystemLogs: (to: string | string[]) => Promise<boolean>
+  sendEmailWithFileSystemLogs: (to: string | string[]) => Promise<boolean>;
 }
 
 export class EmailService implements SendLogEmailUseCase {
@@ -16,12 +16,8 @@ export class EmailService implements SendLogEmailUseCase {
   ) {}
   async execute(to: string | string[]) {
     const sent = await this.emailPlugin.sendEmailWithFileSystemLogs(to);
-    if (!sent) {
-      this.saveLog(false);
-      return false;
-    }
-    this.saveLog(true);
-    return true;
+    this.saveLog(sent);
+    return sent;
   }
   private saveLog(error: boolean) {
     this.logRepository.saveLog(
